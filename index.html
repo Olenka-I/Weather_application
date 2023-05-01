@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>☀️ Weather</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="box">
+      <div class="container search">
+        <div class="search-box">
+          <form onsubmit="searchCity(event)">
+            <input
+              type="text"
+              class="search-bar"
+              placeholder="Enter a city name"
+            />
+            <button class="searchButton">Search</button>
+            <button class="currentButton" onclick="getCurrentLocation()">
+              Current location
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            <img src="media/sunCloud.png" alt="sun cloud" class="sunpic" />
+          </div>
+
+          <div class="col">
+            <div class="topCity">Kyiv</div>
+            <div class="month">April 2</div>
+            <div class="character">Sunny</div>
+          </div>
+          <div class="col">
+            <div class="temp">10</div>
+          </div>
+          <div class="col">
+            <div class="degrees" id="degrees-celsius">C°</div>
+            <a href="#" id="convert-link">Convert to Fahrenheit</a>
+            <div class="wind">Wind: 0 km/h</div>
+            <div class="humidity">Humidity: 60%</div>
+          </div>
+        </div>
+      </div>
+      <div class="container text-center">
+        <div class="row2">
+          <div class="col2">
+            <div class="pointer">←</div>
+          </div>
+          <div class="col2">
+            <div class="day">Sun</div>
+            <img src="media/cloud.png" alt="sun cloud" class="cloudpic" />
+            <div class="temp2"><strong>8°</strong> 6°</div>
+          </div>
+          <div class="col2">
+            <div class="day">Mon</div>
+            <img src="media/rain.png" alt="sun cloud" class="rainpic" />
+            <div class="temp2"><strong>9°</strong> 2°</div>
+          </div>
+          <div class="col2">
+            <div class="day">Tue</div>
+            <img src="media/cloud.png" alt="sun cloud" class="cloudpic" />
+            <div class="temp2"><strong>8°</strong> 6°</div>
+          </div>
+          <div class="col2">
+            <div class="day">Wed</div>
+            <img src="media/rain.png" alt="sun cloud" class="rainpic" />
+            <div class="temp2"><strong>15°</strong> 9°</div>
+          </div>
+          <div class="col2">
+            <div class="day">Thu</div>
+            <img src="media/rain.png" alt="sun cloud" class="rainpic" />
+            <div class="temp2"><strong>13°</strong> 8°</div>
+          </div>
+          <div class="col2">
+            <div class="day">Fri</div>
+            <img src="media/cloud.png" alt="sun cloud" class="cloudpic" />
+            <div class="temp2"><strong>12°</strong> 7°</div>
+          </div>
+          <div class="col2">
+            <div class="pointer">→</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="project.js"></script>
+  </body>
+</html>
