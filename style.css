@@ -206,3 +206,12 @@ div:first-letter {
   text-decoration: none;
   cursor: default;
 }
+.activeF {
+  color: #596275;
+  cursor: default;
+  text-decoration: none;
+}
+.activeF:hover {
+  text-decoration: none;
+  cursor: default;
+}
