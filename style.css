@@ -196,3 +196,13 @@ div:first-letter {
   color: #a8a8a8;
   font-size: 16px;
 }
+
+.degrees .active {
+  color: #596275;
+  cursor: default;
+  text-decoration: none;
+}
+.degrees .active:hover {
+  text-decoration: none;
+  cursor: default;
+}

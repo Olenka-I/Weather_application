@@ -32,6 +32,8 @@ function displayWeatherData(data) {
   document.querySelector(".topCity").textContent = cityName;
   document.querySelector(".temp").textContent = currentTemp;
 
+  celsiusTemperature = data.main.temp;
+
   descriptionElement.innerHTML = data.weather[0].description;
   humidityElement.innerHTML = data.main.humidity;
   windElement.innerHTML = Math.round(data.wind.speed);
@@ -84,3 +86,27 @@ function getCurrentLocation() {
     alert("Geolocation is not supported by your browser");
   }
 }
+function displayFahrenhaitTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let temperatureElement = document.querySelector("#temperature");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+let fahrenheitLink = document.querySelector("#fahrenheit-convert");
+fahrenheitLink.addEventListener("click", displayFahrenhaitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
