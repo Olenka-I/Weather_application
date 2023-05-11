@@ -2,9 +2,15 @@ function displayWeatherData(data) {
   let cityName = data.name;
   let currentTemp = Math.round(data.main.temp);
   let iconElement = document.querySelector("#icon");
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
   document.querySelector(".topCity").textContent = cityName;
   document.querySelector(".temp").textContent = currentTemp;
 
+  descriptionElement.innerHTML = data.weather[0].description;
+  humidityElement.innerHTML = data.main.humidity;
+  windElement.innerHTML = Math.round(data.wind.speed);
   iconElement.setAttribute(
     "src",
     `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
