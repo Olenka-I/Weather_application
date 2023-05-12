@@ -21,6 +21,25 @@ function formatDate(timestamp) {
   return ` ${day} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row2">`;
+  let days = ["Sat", "Sun", "Mon"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col2">
+            <div class="day">${day}</div>
+            <img src="media/cloud.png" alt="sun cloud" class="cloudpic" />
+            <div class="temp2"><strong>8°</strong> 6°</div>
+            </div>
+          `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayWeatherData(data) {
   let cityName = data.name;
   let currentTemp = Math.round(data.main.temp);
@@ -110,3 +129,5 @@ fahrenheitLink.addEventListener("click", displayFahrenhaitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+displayForecast();
