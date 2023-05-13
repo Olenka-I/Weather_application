@@ -153,3 +153,24 @@ fahrenheitLink.addEventListener("click", displayFahrenhaitTemperature);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+window.addEventListener("DOMContentLoaded", () => {
+  searchCityWithDefaultTerm("Kyiv");
+});
+
+function searchCityWithDefaultTerm(searchTerm) {
+  const apiKey = "58b5aa9f0965c501cceca4aadea0a9c2";
+  axios
+    .get(
+      `https://api.openweathermap.org/data/2.5/weather?q=${searchTerm}&appid=${apiKey}&units=metric`
+    )
+    .then((response) => {
+      displayWeatherData(response.data);
+    })
+    .catch((error) => {
+      console.error(error);
+      alert(
+        "Could not find weather data for the default city. Please try again."
+      );
+    });
+}
